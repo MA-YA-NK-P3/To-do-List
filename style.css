@@ -1,0 +1,202 @@
+/* Box sizing and default font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Page background */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f1f2e, #1a3a4a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card container */
+.list {
+    width: 100%;
+    max-width: 540px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px 30px 70px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.list h1 {
+    display: flex;
+    align-items: center;
+    color: #e0f2f7;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.list h1 img {
+    width: 38px;
+    margin-left: 12px;
+    filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 18px 55px;
+    background: #00A389;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #007D6C;
+    transform: translateY(-2px);
+}
+
+ul li {
+    list-style: none;
+    font-size: 1.1rem;
+    padding: 15px 8px 15px 55px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    color: #f0f8ff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: color 0.3s ease;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+}
+
+ul li.checked {
+    color: #a0a8b3;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    color: #e0f2f7;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+ul li span:hover {
+    background: #e74c3c;
+    color: #fff;
+    filter: drop-shadow(0 0 8px rgba(231, 76, 60, 0.6));
+}
+
+@media (max-width: 600px) {
+    .list {
+        padding: 30px 20px 50px;
+    }
+    .list h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .list h1 img {
+        width: 32px;
+        margin-left: 8px;
+    }
+    .row {
+        flex-direction: column;
+        padding-left: 0;
+        border-radius: 10px;
+    }
+    input {
+        width: calc(100% - 40px);
+        padding: 15px 20px;
+        text-align: center;
+    }
+    button {
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+    ul li {
+        font-size: 1rem;
+        padding: 12px 8px 12px 45px;
+    }
+    ul li::before {
+        height: 26px;
+        width: 26px;
+        left: 5px;
+    }
+    ul li span {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+        line-height: 35px;
+        top: 8px;
+    }
+}
